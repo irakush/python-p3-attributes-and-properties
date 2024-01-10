@@ -8,8 +8,24 @@ APPROVED_BREEDS = [
     "Beagle",
     "French Bulldog",
     "Pug",
-    "Pointer"
+    "Pointer",
 ]
 
+
 class Dog:
-    pass
+    def __init__(self, name="Bob", breed="Corgi"):
+        if type(name) == str and 1 <= len(name) <= 25:
+            self.name = name
+        else:
+            print("Name must be string between 1 and 25 characters.")
+
+        if breed in APPROVED_BREEDS:
+            self.breed = breed
+        else:
+            print("Breed must be in list of approved breeds.")
+
+    def set_name(self, name):
+        if type(name) == str and 1 <= len(name) <= 25:
+            self.name = name
+        else:
+            print("Name must be string between 1 and 25 characters.")
